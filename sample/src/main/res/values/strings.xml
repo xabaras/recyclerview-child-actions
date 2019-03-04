@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">sample</string>
+    <string name="show_alert">Show alert</string>
+    <string name="row_text">This is row %d</string>
+</resources>
