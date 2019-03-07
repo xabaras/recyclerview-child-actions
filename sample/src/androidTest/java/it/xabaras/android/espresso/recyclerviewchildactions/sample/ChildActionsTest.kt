@@ -12,7 +12,7 @@ import android.support.test.filters.LargeTest
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import it.xabaras.android.espresso.recyclerviewchildactions.RecyclerViewChildActions.Companion.actionOnChild
-import it.xabaras.android.espresso.recyclerviewchildactions.RecyclerViewChildActions.Companion.childViewAtPositionWithMatcher
+import it.xabaras.android.espresso.recyclerviewchildactions.RecyclerViewChildActions.Companion.childOfViewAtPositionWithMatcher
 import org.hamcrest.CoreMatchers.allOf
 import org.junit.Rule
 import org.junit.Test
@@ -46,7 +46,7 @@ class ChildActionsTest {
         // Check if text has actually changed
         onView(withId(R.id.recyclerView))
             .check(matches(
-                childViewAtPositionWithMatcher(
+                childOfViewAtPositionWithMatcher(
                     R.id.txtDescription, 3, withText(
             REPLACE_TEXT)
                 )
@@ -55,7 +55,7 @@ class ChildActionsTest {
         // Check if btnAlert in the 3rd item of the RecyclerView is visible and enabled
         onView(withId(R.id.recyclerView))
             .check(matches(
-                childViewAtPositionWithMatcher(
+                childOfViewAtPositionWithMatcher(
                     R.id.btnAlert,
                     3,
                     allOf(isDisplayed(), isEnabled())

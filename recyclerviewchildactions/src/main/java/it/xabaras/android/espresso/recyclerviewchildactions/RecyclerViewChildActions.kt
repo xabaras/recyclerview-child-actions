@@ -38,7 +38,7 @@ class RecyclerViewChildActions {
         /**
          * checks that the matcher childMatcher matches with a view having a given id inside a RecyclerView's item (given its position)
          */
-        fun childViewAtPositionWithMatcher(childId: Int, position: Int, childMatcher: Matcher<View>) : Matcher<View> {
+        fun childOfViewAtPositionWithMatcher(childId: Int, position: Int, childMatcher: Matcher<View>) : Matcher<View> {
             return object : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
                 override fun describeTo(description: Description?) {
                     description?.appendText("Match matcher on a RecyclerView's ponsitionth Item child with given id")
