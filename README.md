@@ -1,8 +1,8 @@
 # RecyclerViewChildActions
 
-A simple API to perform actions and checks on child views of a RecycleView's item in Espresso tests.
+This is a simple API to perform actions and checks on child views of a RecycleView's item in Espresso tests.
 
-[ ![Download](https://api.bintray.com/packages/xabaras/maven/recyclerview-child-actions/images/download.svg) ](https://bintray.com/xabaras/maven/recyclerview-child-actions/_latestVersion)
+*RecyclerViewChildActions* has been deigned as an extension to RecyclerViewActions from espresso-contrib package and thus from that class it depends.
 
 Get it via Gradle
 ```groovy
@@ -18,4 +18,38 @@ or Maven
 </dependency>
 ```
 
-Or download the [latest AAR](https://bintray.com/xabaras/maven/recyclerview-child-actions/_latestVersion) and add it to your project's libraries.
+Or download the [latest AAR](https://bintray.com/xabaras/maven/recycler-view-child-actions/_latestVersion) and add it to your project's libraries.
+
+## Usage ##
+
+You can use *RecyclerViewChildActions* to perform [ViewActions](https://developer.android.com/reference/android/support/test/espresso/action/ViewActions) or [ViewAssertions](https://developer.android.com/training/testing/espresso/basics) on Views which are descendants of a RecyclerView's item.
+
+Functionality is exposed via two convenience functions implemented inside the RecyclerViewChildActions class:
+
+```kotlin
+fun actionOnChild(action: ViewAction, childId: Int) : ViewAction
+```
+which performs an action on a view with a given id inside a RecyclerView's item
+
+```kotlin
+fun childOfViewAtPositionWithMatcher(childId: Int, position: Int, childMatcher: Matcher<View>) : Matcher<View>
+```
+
+which checks that the matcher childMatcher matches a view having a given id inside a RecyclerView's item (given its position).
+
+### actionOnChild
+For the sake of simplicity let's suppose we have s RecyclerView whose items are editable notes in a vertical list and we want to change the text contained in one of them, lets say 3rd item.
+With reference to the RecyclerViewActions api, you can use RecylerViewChildActions to perform a replaceText action as follows
+
+```kotlin
+onView(ViewMatchers.withId(R.id.recyclerView))
+      .perform(
+          actionOnItemAtPosition<ViewHolder>(
+              3,
+              actionOnChild(
+                  replaceText("I changed this text via RecyclerViewChildActions"),
+                  R.id.txtDescription
+              )
+          )
+      )
+```
