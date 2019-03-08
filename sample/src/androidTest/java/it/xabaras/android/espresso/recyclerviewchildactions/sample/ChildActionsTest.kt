@@ -34,12 +34,16 @@ class ChildActionsTest {
     @Test
     fun performChildActions() {
 
-        // Replace text of the EditText contained in the 3rd item of the RecyclerView with the one cointained in REPLACE_TEXT
+        // Replace text of the EditText contained in the 3rd item of the RecyclerView
+        // with the one cointained in REPLACE_TEXT
         onView(ViewMatchers.withId(R.id.recyclerView))
             .perform(
                 actionOnItemAtPosition<ViewHolder>(
                     3,
-                    actionOnChild(replaceText(REPLACE_TEXT), R.id.txtDescription)
+                    actionOnChild(
+                        replaceText(REPLACE_TEXT),
+                        R.id.txtDescription
+                    )
                 )
             )
 
@@ -47,8 +51,9 @@ class ChildActionsTest {
         onView(withId(R.id.recyclerView))
             .check(matches(
                 childOfViewAtPositionWithMatcher(
-                    R.id.txtDescription, 3, withText(
-            REPLACE_TEXT)
+                    R.id.txtDescription,
+                    3,
+                    withText(REPLACE_TEXT)
                 )
             ))
 
@@ -82,6 +87,6 @@ class ChildActionsTest {
     }
 
     companion object {
-        const val REPLACE_TEXT = "Changed text with RecyclerViewChildActions"
+        const val REPLACE_TEXT = "I changed this text via RecyclerViewChildActions"
     }
 }

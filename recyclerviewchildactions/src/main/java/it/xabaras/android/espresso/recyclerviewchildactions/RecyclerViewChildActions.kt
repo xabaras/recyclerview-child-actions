@@ -12,6 +12,7 @@ import org.hamcrest.Matcher
 
 class RecyclerViewChildActions {
     companion object {
+
         /**
          * Performs an action on a view with a given id inside a RecyclerView's item
          */
@@ -36,16 +37,18 @@ class RecyclerViewChildActions {
         }
 
         /**
-         * checks that the matcher childMatcher matches with a view having a given id inside a RecyclerView's item (given its position)
+         * checks that the matcher childMatcher matches a view having a given id
+         * inside a RecyclerView's item (given its position)
          */
         fun childOfViewAtPositionWithMatcher(childId: Int, position: Int, childMatcher: Matcher<View>) : Matcher<View> {
             return object : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
                 override fun describeTo(description: Description?) {
-                    description?.appendText("Checks that the matcher childMatcher matches with a view having a given id inside a RecyclerView's item (given its position)")
+                    description?.appendText("Checks that the matcher childMatcher matches" +
+                            " with a view having a given id inside a RecyclerView's item (given its position)")
                 }
 
                 override fun matchesSafely(recyclerView: RecyclerView?): Boolean {
-                    val viewHolder = recyclerView?.findViewHolderForAdapterPosition(position);
+                    val viewHolder = recyclerView?.findViewHolderForAdapterPosition(position)
                     val matcher = hasDescendant(allOf(withId(childId), childMatcher))
                     return viewHolder != null && matcher.matches(viewHolder.itemView)
                 }
@@ -53,4 +56,5 @@ class RecyclerViewChildActions {
             }
         }
     }
+
 }
