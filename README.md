@@ -6,13 +6,13 @@ A simple API to perform actions and checks on child views of a RecycleView's ite
 
 Get it via Gradle
 ```groovy
-implementation 'it.xabaras.android.espresso:recycler-view-child-actions:1.0'
+implementation 'it.xabaras.android.espresso:recyclerview-child-actions:1.0'
 ```
 or Maven
 ```xml
 <dependency>
   <groupId>it.xabaras.android.espresso</groupId>
-  <artifactId>recycler-view-child-actions</artifactId>
+  <artifactId>recyclerview-child-actions</artifactId>
   <version>1.0</version>
   <type>pom</type>
 </dependency>
