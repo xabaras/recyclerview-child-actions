@@ -2,6 +2,8 @@
 
 A simple API to perform actions and checks on child views of a RecycleView's item in Espresso tests.
 
+[ ![Download](https://api.bintray.com/packages/xabaras/maven/recyclerview-child-actions/images/download.svg) ](https://bintray.com/xabaras/maven/recyclerview-child-actions/_latestVersion)
+
 Get it via Gradle
 ```groovy
 implementation 'it.xabaras.android.espresso:recycler-view-child-actions:1.0'
@@ -16,4 +18,4 @@ or Maven
 </dependency>
 ```
 
-Or download the [latest AAR](https://bintray.com/xabaras/maven/recycler-view-child-actions/_latestVersion) and add it to your project's libraries.
+Or download the [latest AAR](https://bintray.com/xabaras/maven/recyclerview-child-actions/_latestVersion) and add it to your project's libraries.
