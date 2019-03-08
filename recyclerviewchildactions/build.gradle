@@ -34,7 +34,35 @@ dependencies {
     implementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
 }
 repositories {
     mavenCentral()
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'recyclerview-child-actions'
+
+    publishedGroupId = 'it.xabaras.android.espresso'
+    libraryName = 'RecyclerViewChildActions'
+    artifact = 'recyclerview-child-actions'
+
+    libraryDescription = 'A simple API to perform actions and checks on child views of a RecycleView\'s item in Espresso tests.'
+
+    siteUrl = 'https://github.com/xabaras/recyclerview-child-actions'
+    gitUrl = 'https://github.com/xabaras/recyclerview-child-actions.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'xabaras'
+    developerName = 'Paolo Montalto'
+    developerEmail = 'p.montalto@xabaras.it'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
