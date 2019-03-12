@@ -18,7 +18,9 @@ or Maven
 </dependency>
 ```
 
-Or [ ![Download](https://api.bintray.com/packages/xabaras/maven/recyclerview-child-actions/images/download.svg?version=1.0) ](https://bintray.com/xabaras/maven/recyclerview-child-actions/1.0/link) the latest AAR and add it to your project's libraries.
+Or download the latest AAR and add it to your project's libraries.
+
+[ ![Download](https://api.bintray.com/packages/xabaras/maven/recyclerview-child-actions/images/download.svg?version=1.0) ](https://bintray.com/xabaras/maven/recyclerview-child-actions/1.0/link)
 
 ## Usage ##
 
