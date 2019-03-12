@@ -4,8 +4,6 @@ This is a simple API to perform actions and checks on child views of a RecycleVi
 
 *RecyclerViewChildActions* has been designed as an extension to RecyclerViewActions from espresso-contrib package and thus from that class it depends.
 
-[ ![Download](https://api.bintray.com/packages/xabaras/maven/recyclerview-child-actions/images/download.svg?version=1.0) ](https://bintray.com/xabaras/maven/recyclerview-child-actions/1.0/link)
-
 Get it via Gradle
 ```groovy
 implementation 'it.xabaras.android.espresso:recyclerview-child-actions:1.0'
@@ -20,7 +18,7 @@ or Maven
 </dependency>
 ```
 
-Or download the [latest AAR](https://bintray.com/xabaras/maven/recycler-view-child-actions/_latestVersion) and add it to your project's libraries.
+Or [ ![Download](https://api.bintray.com/packages/xabaras/maven/recyclerview-child-actions/images/download.svg?version=1.0) ](https://bintray.com/xabaras/maven/recyclerview-child-actions/1.0/link) the latest AAR and add it to your project's libraries.
 
 ## Usage ##
 
