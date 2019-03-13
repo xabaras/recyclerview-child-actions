@@ -70,3 +70,7 @@ onView(withId(R.id.recyclerView))
         )
     )
 ```
+
+Than you for using *RecylerViewChildActions*.
+
+Any suggestion or contribution to extend/improve this api is warmly welcome.
